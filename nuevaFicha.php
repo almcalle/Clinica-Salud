@@ -87,7 +87,7 @@ include 'include/head.inc';
 	    				</div>
 	    				<!-- </div> -->
 	    				<div class="form-group"><!--Responsable-->
-	    					<label for="responsable">Lugar de Nacimiento</label>
+	    					<label for="lugarNacimiento">Lugar de Nacimiento</label>
 	    					<input type="text" maxlength="39" onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="lugarNacimiento" class="form-control" />
 	    				</div>
                 <div class="form-group"><!--Responsable-->
