@@ -3,3 +3,7 @@
 .small-box {
     margin: 15px;
 }
+
+.col-xs-6 {
+    padding-left: 0px;
+}
