@@ -66,12 +66,12 @@ include 'include/head.inc';
                 <div class="form-group">
                   <div class="col-xs-6">
                     <label for="grado">Grado</label>
-                    <input type="text" maxlength="40"  onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="grado" class="form-control" />
+                    <input type="text" maxlength="39"  onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="grado" class="form-control" />
 
                   </div>
                   <div class="col-xs-6">
                     <label for="escuela">Escuela</label>
-                    <input type="text" maxlength="40"  onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="escuela" class="form-control" />
+                    <input type="text" maxlength="39"  onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="escuela" class="form-control" />
                   </div>
                 </div>
 	    				<div class="col-xs-6">
@@ -88,19 +88,19 @@ include 'include/head.inc';
 	    				<!-- </div> -->
 	    				<div class="form-group"><!--Responsable-->
 	    					<label for="responsable">Lugar de Nacimiento</label>
-	    					<input type="text" maxlength="40" onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="lugarNacimiento" class="form-control" />
+	    					<input type="text" maxlength="39" onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="lugarNacimiento" class="form-control" />
 	    				</div>
                 <div class="form-group"><!--Responsable-->
   	    					<label for="religion">Religión</label>
-  	    					<input type="text" maxlength="40" onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="religion" class="form-control" />
+  	    					<input type="text" maxlength="39" onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="religion" class="form-control" />
   	    				</div>
                 <div class="form-group"><!--Responsable-->
   	    					<label for="fuente">Fuente</label>
-  	    					<input type="text" maxlength="40" onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="fuente" class="form-control" />
+  	    					<input type="text" maxlength="39" onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="fuente" class="form-control" />
   	    				</div>
                 <div class="form-group"><!--Responsable-->
-                  <label for="contacto_responsable">Número de telefono</label>
-                  <input type="text" maxlength="40"  onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="contacto_responsable" class="form-control" />
+                  <label for="telefono">Número de telefono</label>
+                  <input type="text" maxlength="39"  onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="telefono" class="form-control" />
                 </div>
 	    				</div>
 	    			</div>
