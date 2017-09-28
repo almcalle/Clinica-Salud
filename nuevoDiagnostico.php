@@ -87,8 +87,8 @@ $registro = mysql_query("select * from ficha where identidad='".$buscar."'");
             </div>
             <div>
             <br>
-              <input type="submit" class="btn btn-warning btn-flat pull-right" value="Guardar Ficha"/>
-              <a href="javascript:limpiar();" class="btn btn-danger btn-flat pull-right">Limpiar Ficha</a>
+              <input type="submit" class="btn btn-warning btn-flat pull-right" value="Guardar Diagnostico"/>
+              <a href="javascript:limpiar();" class="btn btn-danger btn-flat pull-right">Limpiar Diagnostico</a>
             </div>
           </form>
   </div>

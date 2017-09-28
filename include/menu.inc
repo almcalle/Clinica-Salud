@@ -7,11 +7,8 @@
   <nav class="navbar navbar-static-top" role="navigation">
     <!--Boton Menu -->
     <a class="sidebar-toggle" role="button" data-toggle="offcanvas" href="#">
-       <span class="sr-only"></span>
-       <span class="glyphicon glyphicon-menu-hamburger"></span>
-      <!--<span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span> -->
+       <i class="glyphicon glyphicon-menu-hamburger"></i>
+
     </a>
 
     <!-- Navbar Right Menu -->
@@ -74,7 +71,7 @@
                 <!--Examen Físico-->
                 <li class="treeview">
                   <a href="#">
-                    <i class="glyphicon glyphicon-inbox"></i>
+                    <i class="glyphicon glyphicon-scale"></i>
                     <span>Examen Físico</span>
                     <i class="glyphicon glyphicon-chevron-left pull-right"></i>
                   </a>
@@ -83,7 +80,7 @@
                   </ul>
                 </li>
 
-                <!--Examen Físico -->
+                <!--Anamnesis -->
                <li class="treeview">
                   <a href="#">
                     <i class="glyphicon glyphicon-plus-sign"></i>
@@ -106,7 +103,31 @@
                   </a>
                 </li>
                 <!--fin dignostico-->
-                <!--MI INSTITUCION -->
+                <!--Tratamiento-->
+                <li class="treeview">
+                  <a href="#">
+                    <i class="glyphicon glyphicon-inbox"></i>
+                    <span>Tratamiento</span>
+                    <i class="glyphicon glyphicon-chevron-left pull-right"></i>
+                    <ul class="treeview-menu">
+                    <li><a href="consultaTratamiento.php"><i class="glyphicon glyphicon-asterisk  text-orange"></i> Consultar Diagnostico</a></li>
+                    </ul>
+                  </a>
+                </li>
+                <!--fin Tratamiento-->
+
+                <!--Citas-->
+                <li class="treeview">
+                  <a href="#">
+                    <i class="glyphicon glyphicon-time"></i>
+                    <span>Citas</span>
+                    <i class="glyphicon glyphicon-chevron-left pull-right"></i>
+                    <ul class="treeview-menu">
+                    <li><a href="consultaCitas.php"><i class="glyphicon glyphicon-asterisk  text-orange"></i> Consultar Citas</a></li>
+                    </ul>
+                  </a>
+                </li>
+                <!--fin Tratamiento-->
 
           </ul>
 

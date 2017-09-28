@@ -9,13 +9,13 @@ include 'include/head.inc';
       <div class="content-wrapper">
         <section class="content-header">
         <h1>
-        Consulta de Diagnostico
+        Consulta de Tratamiento
         <small></small>
         </h1>
         <ol class="breadcrumb">
         <li><a href="menu.php"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Ficha de Diagnostico</li>
-        <li class="active">Consulta de Diagnostico</li>
+        <li>Ficha de Tratamiento</li>
+        <li class="active">Consulta de Tratamiento</li>
         </ol>
         </section>
         <section class="content"><!--AQUI COMIENZA EL CONTENIDO -->
@@ -28,7 +28,7 @@ include 'include/head.inc';
         $id = $_POST['id'];
 
 
-        $registro = mysql_query("SELECT DISTINCT * FROM diagnosticos ") or die(mysql_error());
+        $registro = mysql_query("SELECT DISTINCT * FROM tratamiento ") or die(mysql_error());
 
 
       echo '<table id="example" class="display" cellspacing="0" width="100%">
@@ -37,8 +37,8 @@ include 'include/head.inc';
                       <th width="100">ID</th>
                          <th width="100">IDENTIDAD</th>
                          <th width="200">NOMBRE</th>
-                         <th width="200">CLASE</th>
                           <th width="200">FECHA</th>
+                          <th width="200">TRATAMIENTO</th>
                     <th width="100">ACCIONES</th>
                       </tr>
         </thead>
@@ -51,16 +51,16 @@ include 'include/head.inc';
                 <td>'.$registro2['id'].'</td>
                   <td>'.$registro2['identidad'].'</td>
                   <td>'.$ficha['nombre'].'</td>
-                  <td>'.$ficha['grado'].'-'.$ficha[seccion].'</td>
                    <td>'.$registro2['fecha'].'</td>
-                        <td><a href="javascript:detalleDiagnostico('.$registro2['id'].');" class="glyphicon glyphicon-search" data-toggle="tooltip" title="Ver Detalle"></a>
+                   <td>'.$registro2['tratamiento'].'</td>
+                        <td><a href="javascript:detalleTratamiento('.$registro2['id'].');" class="glyphicon glyphicon-search" data-toggle="tooltip" title="Ver Detalle"></a>
                         &nbsp;&nbsp;&nbsp;
-
                         <a href="detalleFicha.php?id='.$registro2['identidad'].'""
                          class="glyphicon glyphicon-user" data-toggle="tooltip"
                          title="Ver Ficha"></a>
-                         &nbsp;&nbsp;&nbsp;
-                        <a href="javascript:borrarDiagnostico('.$registro2['id'].');"
+                        &nbsp;&nbsp;&nbsp;
+
+                        <a href="javascript:borrarTratamiento('.$registro2['id'].');"
                          class="glyphicon glyphicon-trash" data-toggle="tooltip" title="borrar Evaluación"></a></td>
                    </tr>';
       }
@@ -87,8 +87,8 @@ include 'include/scripts.inc';
 ?>
 <script src = "js/jquery.dataTables.js" type="text/javascript"></script>
 <script type="text/javascript">
-function detalleDiagnostico(id){
-    var url = 'php/detalle/detalleDiagnostico.php';
+function detalleTratamiento(id){
+    var url = 'php/detalle/detalleTratamiento.php';
     if(!id){
         }
         else{
@@ -105,9 +105,9 @@ function detalleDiagnostico(id){
     }
 </script>
 <script type="text/javascript">
-    function borrarDiagnostico(id){
-		var url = 'php/eliminar/borrarDiagnostico.php';
-		var pregunta = confirm('¿Esta seguro de eliminar el Diagnostico?');
+    function borrarTratamiento(id){
+		var url = 'php/eliminar/borrarTratamiento.php';
+		var pregunta = confirm('¿Esta seguro de eliminar el Tratamiento?');
 		if(pregunta==true){
 			$.ajax({
 			type:'POST',

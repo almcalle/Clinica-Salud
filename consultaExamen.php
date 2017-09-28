@@ -40,7 +40,7 @@ include 'include/head.inc';
                          <th width="200">CLASE</th>
 
                           <th width="200">FECHA</th>
-                    <th width="100">ACCIONES</th>
+                    <th width="150">ACCIONES</th>
                       </tr>
         </thead>
          <tbody>';
@@ -56,10 +56,15 @@ include 'include/head.inc';
                    <td>'.$registro2['fecha'].'</td>
                         <td>
                         <a href="javascript:detalleExamen('.$registro2['id'].');" class="glyphicon glyphicon-search" data-toggle="tooltip" title="Ver Detalle"></a>
-                        &nbsp;&nbsp;&nbsp;
-                        <a href="editarExamenFisico.php?idExamen='.$registro2['id'].'" class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Editar Examen Físico"></a>
-
-                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;
+                        <a href="detalleFicha.php?id='.$registro2['identidad'].'""
+                         class="glyphicon glyphicon-user" data-toggle="tooltip"
+                         title="Ver Ficha"></a>
+                         <!-- &nbsp;&nbsp;
+                        <a href="editarExamenFisico.php?idExamen='.$registro2['id'].'"
+                        class="glyphicon glyphicon-edit" data-toggle="tooltip"
+                         title="Editar Examen Físico"></a> -->
+                        &nbsp;&nbsp;
                         <a href="javascript:borrarExamen('.$registro2['id'].');" class="glyphicon glyphicon-trash" data-toggle="tooltip" title="borrar Examen"></a></td>
                    </tr>';
       }

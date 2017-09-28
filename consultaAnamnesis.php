@@ -53,7 +53,20 @@ include 'include/head.inc';
                   <td>'.$ficha['nombre'].'</td>
                   <td>'.$ficha['grado'].'-'.$ficha[seccion].'</td>
                    <td>'.$registro2['fecha'].'</td>
-                        <td><a href="javascript:detalleAnamnesis('.$registro2['id'].');" class="glyphicon glyphicon-search" data-toggle="tooltip" title="Ver Detalle"></a>&nbsp;&nbsp;&nbsp;<a href="javascript:borrarAnamnesis('.$registro2['id'].');" class="glyphicon glyphicon-trash" data-toggle="tooltip" title="borrar Evaluación"></a></td>
+                        <td>
+                        <a href="javascript:detalleAnamnesis('.$registro2['id'].');"
+                         class="glyphicon glyphicon-search" data-toggle="tooltip"
+                         title="Ver Detalle"></a>
+                         &nbsp;&nbsp;&nbsp;
+                         <a href="detalleFicha.php?id='.$registro2['identidad'].'""
+                          class="glyphicon glyphicon-user" data-toggle="tooltip"
+                          title="Ver Ficha"></a>
+                         &nbsp;&nbsp;&nbsp;
+                         <a href="javascript:borrarAnamnesis('.$registro2['id'].');"
+                          class="glyphicon glyphicon-trash"
+                          data-toggle="tooltip" title="borrar Evaluación"></a>
+
+                          </td>
                    </tr>';
       }
         echo '</tbody></table>';

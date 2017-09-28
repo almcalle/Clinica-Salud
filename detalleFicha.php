@@ -81,21 +81,27 @@ if ($reg==0) {
     	<i class="glyphicon glyphicon-trash"></i> Borrar Ficha
     </a>
 
-    <a class="btn btn-app" href="editarFicha.php?id=<?php echo $identidad; ?>">
+    <!-- <a class="btn btn-app" href="editarFicha.php?id=<?php echo $identidad; ?>">
       <i class="glyphicon glyphicon-edit"></i> Editar Ficha
-    </a>
-    <a class="btn btn-app" href="Anamnesis.php?id=<?php echo $identidad; ?>">
+    </a> -->
+    <a class="btn btn-app" href="nuevoAnamnesis.php?id=<?php echo $identidad; ?>">
       <i class="glyphicon glyphicon-plus"></i>  Anamnesis
     </a>
 
-    <a class="btn btn-app" href="ExamenFisico.php?id=<?php echo $identidad; ?>">
+    <a class="btn btn-app" href="nuevoExamenFisico.php?id=<?php echo $identidad; ?>">
     	<i class="glyphicon glyphicon-plus"></i>  Examen Físico
     </a>
     <!-- <a class="btn btn-app" href="Evaluacion.php?id=<?php echo $identidad; ?>">
       <i class="glyphicon glyphicon-plus"></i>  Evaluación Médica
     </a> -->
-    <a class="btn btn-app" href="Diagnostico.php?id=<?php echo $identidad; ?>">
+    <a class="btn btn-app" href="nuevoDiagnostico.php?id=<?php echo $identidad; ?>">
       <i class="glyphicon glyphicon-plus"></i>  Diagnostico
+    </a>
+    <a class="btn btn-app" href="nuevoTratamiento.php?id=<?php echo $identidad; ?>">
+      <i class="glyphicon glyphicon-plus"></i>  Tratamiento
+    </a>
+    <a class="btn btn-app" href="nuevaCita.php?id=<?php echo $identidad; ?>">
+      <i class="glyphicon glyphicon-plus"></i>  Cita
     </a>
 
 </div>
@@ -201,12 +207,9 @@ if ($reg==0) {
   <dd><?php echo $anamnesis['sintoma_principal']; ?></dd>
   <dt>Historia de la enfermedad actual:</dt>
   <dd><?php echo $anamnesis['historia_enfermedad']; ?></dd>
-
-
-
-        <dt>Fecha:</dt>
+  <dt>Fecha:</dt>
         <dd><?php echo $anamnesis['fecha']; ?></dd>
-    </dl><br/>
+    </dl>
 </div>
 </div>
 </div>
@@ -243,11 +246,44 @@ if ($reg==0) {
         <dd><?php echo $diagnostico['fecha']; ?></dd>
     </dl>
 </div>
-    <div class="box-footer"></div>
+
 </div>
 </div>
 <!-- </div> -->
     <!--Aqui finaliza el detalle del diagnostico-->
+
+    <!--Aqui comienza el detalle del tratamiento-->
+    <?php
+    $tratamientos = mysql_query("select * from tratamiento where identidad='".$identidad."' ORDER BY `fecha` DESC");
+    // $tratamientos = mysql_fetch_array($sql); ?>
+<!-- <div class="container"> -->
+<div class="col-lg-12">
+    <div class="panel panel-warning">
+<div class="panel-heading"><h3><i class="fa fa-folder-open"></i>Ficha de tratamientos</h3>
+<!-- /.box-tools -->
+</div>
+
+<!-- /.box-header -->
+
+<div class="panel-body">
+  <dl>
+    <?php
+    while($tratamiento = mysql_fetch_array($tratamientos)){
+      ?>
+      <dt>Fecha:</dt>
+      <dd><?php echo $tratamiento['fecha']; ?></dd>
+        <dt>Tratamiento:</dt>
+        <dd><?php echo $tratamiento['tratamiento']; ?></dd>
+        <?php
+      }
+          ?>
+    </dl>
+</div>
+
+</div>
+</div>
+<!-- </div> -->
+    <!--Aqui finaliza el detalle del tratamiento-->
 
 <?php
 }

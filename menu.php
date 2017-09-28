@@ -19,7 +19,6 @@ include 'include/menu.inc';
       <section class="content">
 
       <!-- Tabla con Número, Nombre y apellidos, Sexo, Edad, Grado, Dirección y Diagnostico -->
-Fecha sale del ultimo diagnóstico
 
       <div class="row">
         <div class="col-lg-12">
@@ -63,9 +62,16 @@ Fecha sale del ultimo diagnóstico
                 <td>'.$registro2['patologico'].'</td>
 
 
-                      <td><a href="detalleFicha.php?id='.$registro2['identidad'].'" class="glyphicon glyphicon-search" data-toggle="tooltip" title="Ver Detalle"></a>
-                      &nbsp;&nbsp;&nbsp;<a href="editarFicha.php?id='.$registro2['identidad'].'" class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Editar Ficha"></a>
-                      &nbsp;&nbsp;&nbsp;<a href="javascript:borrarFicha('.$registro2['identidad'].');" class="glyphicon glyphicon-erase" data-toggle="tooltip" title="Borrar Ficha"></a>
+                      <td><a href="detalleFicha.php?id='.$registro2['identidad'].'"
+                      class="glyphicon glyphicon-user" data-toggle="tooltip" title="Ver Ficha"></a>
+                      <!-- &nbsp;&nbsp;&nbsp;
+                      <a href="editarFicha.php?id='.$registro2['identidad'].'"
+                      class="glyphicon glyphicon-edit" data-toggle="tooltip"
+                       title="Editar Ficha"></a>
+                      &nbsp;&nbsp;&nbsp;
+                      <a href="javascript:borrarFicha('.$registro2['identidad'].');"
+                       class="glyphicon glyphicon-trash" data-toggle="tooltip"
+                        title="Borrar Ficha"></a>-->
                         </td>
       </tr>';
       }

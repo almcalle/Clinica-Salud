@@ -143,10 +143,10 @@ include 'include/menu.inc';
         </section><!-- Aqui es el fin -->
         </div>
       </div>
+    </div><!-- ./wrapper -->
       <?php
       include 'include/footer.inc';
       ?>
-      </div><!-- ./wrapper -->
 
 <?php
 include 'include/scripts.inc';

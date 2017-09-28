@@ -49,9 +49,22 @@ include 'include/head.inc';
                   <td>'.$registro2['nombre'].'</td>
                   <td>'.$registro2['grado'].'-'.$registro2[seccion].'</td>
 
-                        <td><a href="detalleFicha.php?id='.$registro2['identidad'].'" class="glyphicon glyphicon-search" data-toggle="tooltip" title="Ver Detalle"></a>
-                        &nbsp;&nbsp;&nbsp;<a href="editarFicha.php?id='.$registro2['identidad'].'" class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Editar Ficha"></a>
-                        &nbsp;&nbsp;&nbsp;<a href="javascript:borrarFicha('.$registro2['identidad'].');" class="glyphicon glyphicon-trash" data-toggle="tooltip" title="Borrar Ficha"></a>
+                        <td><a href="detalleFicha.php?id='.$registro2['identidad'].
+                        '" class="glyphicon glyphicon-search" data-toggle="tooltip"
+                         title="Ver Detalle"></a>
+                        <!--  &nbsp;&nbsp;&nbsp;<a href="editarFicha.php?id='.$registro2['identidad'].'"
+                         class="glyphicon glyphicon-edit" data-toggle="tooltip"
+                         title="Editar Ficha"></a> -->
+                         &nbsp;&nbsp;&nbsp;<a href="nuevaCita.php?id='.$registro2['identidad'].'"
+                          class="glyphicon glyphicon-time" data-toggle="tooltip"
+                          title="Añadir Cita"></a>
+
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="javascript:borrarFicha('.$registro2['identidad'].');"
+                         class="glyphicon glyphicon-trash" data-toggle="tooltip"
+                         title="Borrar Ficha"></a>
+
+
                         	</td>
 				</tr>';
       }

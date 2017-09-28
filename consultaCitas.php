@@ -9,13 +9,13 @@ include 'include/head.inc';
       <div class="content-wrapper">
         <section class="content-header">
         <h1>
-        Consulta de Diagnostico
+        Consulta de Citas
         <small></small>
         </h1>
         <ol class="breadcrumb">
         <li><a href="menu.php"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Ficha de Diagnostico</li>
-        <li class="active">Consulta de Diagnostico</li>
+        <li>Ficha de Citas</li>
+        <li class="active">Consulta de Citas</li>
         </ol>
         </section>
         <section class="content"><!--AQUI COMIENZA EL CONTENIDO -->
@@ -28,40 +28,51 @@ include 'include/head.inc';
         $id = $_POST['id'];
 
 
-        $registro = mysql_query("SELECT DISTINCT * FROM diagnosticos ") or die(mysql_error());
+
+        $registro = mysql_query("SELECT
+            *
+        FROM
+            citas
+        INNER JOIN ficha ON citas.identidad = ficha.identidad
+        ORDER BY
+            citas.fecha
+        DESC")
+
+        // SELECT DISTINCT * FROM citas ORDER BY `citas`.`fecha` DESC")
+         or die(mysql_error());
 
 
-      echo '<table id="example" class="display" cellspacing="0" width="100%">
+      echo '<table id="citas" class="display" cellspacing="0" width="100%">
         <thead>
                       <tr>
-                      <th width="100">ID</th>
+                      <th width="200">FECHA DE LA CITA</th>
                          <th width="100">IDENTIDAD</th>
                          <th width="200">NOMBRE</th>
-                         <th width="200">CLASE</th>
-                          <th width="200">FECHA</th>
+                          <th width="200">CITA</th>
                     <th width="100">ACCIONES</th>
                       </tr>
         </thead>
          <tbody>';
 
       while($registro2 = mysql_fetch_array($registro)){
-        $consulta = mysql_query("select * from ficha where identidad='".$registro2['identidad']."'") or die(mysql_error());
-        $ficha = mysql_fetch_array($consulta);
-        echo'<tr>
-                <td>'.$registro2['id'].'</td>
-                  <td>'.$registro2['identidad'].'</td>
-                  <td>'.$ficha['nombre'].'</td>
-                  <td>'.$ficha['grado'].'-'.$ficha[seccion].'</td>
-                   <td>'.$registro2['fecha'].'</td>
-                        <td><a href="javascript:detalleDiagnostico('.$registro2['id'].');" class="glyphicon glyphicon-search" data-toggle="tooltip" title="Ver Detalle"></a>
-                        &nbsp;&nbsp;&nbsp;
 
+        echo'<tr>
+                  <td>'.$registro2['fecha'].'</td>
+                  <td>'.$registro2['identidad'].'</td>
+                  <td>'.$registro2['nombre'].'</td>
+                   <td>'.$registro2['cita'].'</td>
+                        <td><a href="javascript:detalleCita('.$registro2['id'].');"
+                         class="glyphicon glyphicon-search" data-toggle="tooltip"
+                          title="Ver Detalle"></a>
+                        &nbsp;&nbsp;&nbsp;
                         <a href="detalleFicha.php?id='.$registro2['identidad'].'""
                          class="glyphicon glyphicon-user" data-toggle="tooltip"
                          title="Ver Ficha"></a>
-                         &nbsp;&nbsp;&nbsp;
-                        <a href="javascript:borrarDiagnostico('.$registro2['id'].');"
-                         class="glyphicon glyphicon-trash" data-toggle="tooltip" title="borrar Evaluación"></a></td>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="javascript:borrarCita('.$registro2['id'].');"
+                         class="glyphicon glyphicon-trash" data-toggle="tooltip"
+                         title="borrar Evaluación"></a>
+                         </td>
                    </tr>';
       }
         echo '</tbody></table>';
@@ -87,8 +98,8 @@ include 'include/scripts.inc';
 ?>
 <script src = "js/jquery.dataTables.js" type="text/javascript"></script>
 <script type="text/javascript">
-function detalleDiagnostico(id){
-    var url = 'php/detalle/detalleDiagnostico.php';
+function detalleCita(id){
+    var url = 'php/detalle/detalleCita.php';
     if(!id){
         }
         else{
@@ -105,9 +116,9 @@ function detalleDiagnostico(id){
     }
 </script>
 <script type="text/javascript">
-    function borrarDiagnostico(id){
-		var url = 'php/eliminar/borrarDiagnostico.php';
-		var pregunta = confirm('¿Esta seguro de eliminar el Diagnostico?');
+    function borrarCita(id){
+		var url = 'php/eliminar/borrarCita.php';
+		var pregunta = confirm('¿Esta seguro de eliminar la Cita?');
 		if(pregunta==true){
 			$.ajax({
 			type:'POST',
@@ -124,7 +135,7 @@ function detalleDiagnostico(id){
 </script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#example').DataTable();
+    $('#citas').DataTable();
 } );
 </script>
 <?php
