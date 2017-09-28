@@ -62,15 +62,19 @@ include 'include/head.inc';
 </select>
                 </div>
 	    				<!-- <div class="form-group"> -->
+              <div class="form-group">
+	    					<label for="direccion">* Dirección</label>
+	    					<input  type="text" onBlur="javascript:this.value=this.value.toUpperCase();"  name="direccion" maxlength="40" required="required" class="form-control"/>
+	    				</div>
                 <!--Fecha de nacimiento y edad-->
                 <div class="form-group">
                   <div class="col-xs-6">
-                    <label for="grado">Grado</label>
+                    <label for="grado">* Grado</label>
                     <input type="text" maxlength="39"  onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="grado" class="form-control" />
 
                   </div>
                   <div class="col-xs-6">
-                    <label for="escuela">Escuela</label>
+                    <label for="escuela">* Escuela</label>
                     <input type="text" maxlength="39"  onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="escuela" class="form-control" />
                   </div>
                 </div>
@@ -89,6 +93,10 @@ include 'include/head.inc';
 	    				<div class="form-group"><!--Responsable-->
 	    					<label for="lugarNacimiento">Lugar de Nacimiento</label>
 	    					<input type="text" maxlength="39" onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="lugarNacimiento" class="form-control" />
+	    				</div>
+              <div class="form-group"><!--Responsable-->
+	    					<label for="procedencia">Procedencia</label>
+	    					<input type="text" maxlength="39" onBlur="javascript:this.value=this.value.toUpperCase();" required="required" name="procedencia" class="form-control" />
 	    				</div>
                 <div class="form-group"><!--Responsable-->
   	    					<label for="religion">Religión</label>
