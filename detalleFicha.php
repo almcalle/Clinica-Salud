@@ -85,15 +85,15 @@ if ($reg==0) {
     <a class="btn btn-app" href="editarFicha.php?id=<?php echo $identidad; ?>">
       <i class="glyphicon glyphicon-edit"></i> Editar Ficha
     </a>
+    <a class="btn btn-app" href="Anamnesis.php?id=<?php echo $identidad; ?>">
+      <i class="glyphicon glyphicon-plus"></i>  Anamnesis
+    </a>
 
-    <a class="btn btn-app" href="Examen.php?id=<?php echo $identidad; ?>">
+    <a class="btn btn-app" href="ExamenFisico.php?id=<?php echo $identidad; ?>">
     	<i class="glyphicon glyphicon-plus"></i>  Examen Físico
     </a>
     <a class="btn btn-app" href="Evaluacion.php?id=<?php echo $identidad; ?>">
       <i class="glyphicon glyphicon-plus"></i>  Evaluación Médica
-    </a>
-    <a class="btn btn-app" href="Anamnesis.php?id=<?php echo $identidad; ?>">
-      <i class="glyphicon glyphicon-plus"></i>  Anamnesis
     </a>
     <a class="btn btn-app" href="Diagnostico.php?id=<?php echo $identidad; ?>">
       <i class="glyphicon glyphicon-plus"></i>  Diagnostico
@@ -130,28 +130,25 @@ if ($reg==0) {
         <dd><?php echo $examen['talla']; ?></dd>
         <dt>IMC:</dt>
         <dd><?php echo $examen['imc']; ?></dd>
-        <dt>Ojo Derecho:</dt>
-        <dd><?php echo $examen['ojo_derecho']; ?></dd>
-        <dt>Ojo Izquierdo:</dt>
-        <dd><?php echo $examen['ojo_izquierdo']; ?></dd>
-        <dt>Observaciones Visual:</dt>
-        <dd><?php echo $examen['observaciones_visual']; ?></dd>
         <dt>Cabeza:</dt>
         <dd><?php echo $examen['cabeza']; ?></dd>
+        <dt>Ojos:</dt>
+        <dd><?php echo $examen['ojos']; ?></dd>
+
         <dt>Oidos:</dt>
         <dd><?php echo $examen['oidos']; ?></dd>
         <dt>Nariz:</dt>
         <dd><?php echo $examen['nariz']; ?></dd>
-        <dt>Faringe:</dt>
-        <dd><?php echo $examen['faringe']; ?></dd>
-        <dt>Escoliosis:</dt>
-        <dd><?php echo $examen['escoliosis']; ?></dd>
-        <dt>Dental:</dt>
-        <dd><?php echo $examen['dental']; ?></dd>
+        <dt>Boca:</dt>
+        <dd><?php echo $examen['boca']; ?></dd>
+
         <dt>Cuello:</dt>
-        <dd><?php echo $examen['coello']; ?></dd>
-        <dt>Torax:</dt>
-        <dd><?php echo $examen['torax']; ?></dd>
+        <dd><?php echo $examen['cuello']; ?></dd>
+
+        <dt>Columna:</dt>
+        <dd><?php echo $examen['columna']; ?></dd>
+        <dt>Pulmones:</dt>
+        <dd><?php echo $examen['pulmones']; ?></dd>
         <dt>Corazon:</dt>
         <dd><?php echo $examen['corazon']; ?></dd>
         <dt>Abdomen:</dt>
@@ -167,9 +164,9 @@ if ($reg==0) {
         <dt>Fecha:</dt>
         <dd><?php echo $examen['fecha']; ?></dd>
     </dl><br/>
-    <a class="btn btn-app" href="editarExamenFisico.php?idExamen=<?php echo $examen['id']; ?>">
+    <!-- <a class="btn btn-app" href="editarExamenFisico.php?idExamen=<?php echo $examen['id']; ?>">
       <i class="fa fa-edit"></i> Editar Examen Físico
-    </a>
+    </a> -->
 </div>
 </div>
 </div>
@@ -235,28 +232,23 @@ $evaluacion = mysql_fetch_array($sql); ?>
     $registro = mysql_query("select * from anamnesis where identidad='".$identidad."' ORDER BY `fecha` DESC");
     $anamnesis = mysql_fetch_array($registro); ?>
 <dl>
-        <dt>Apetito:</dt>
-        <dd><?php echo $anamnesis['apetito']; ?></dd>
-        <dt>Micción:</dt>
-        <dd><?php echo $anamnesis['miccion']; ?></dd>
-        <dt>Defecación:</dt>
-        <dd><?php echo $anamnesis['defecacion']; ?></dd>
-        <dt>Sueño:</dt>
-        <dd><?php echo $anamnesis['sueno']; ?></dd>
-        <dt>Enfermedades Cronicas:</dt>
-        <dd><?php echo $anamnesis['enfe_cronicas']; ?></dd>
-        <dt>Medicamentos:</dt>
-        <dd><?php echo $anamnesis['medicamentos']; ?></dd>
-        <dt>Antecedentes Alergicos:</dt>
-        <dd><?php echo $anamnesis['ante_alergicos']; ?></dd>
-        <dt>Habitos Toxicos:</dt>
-        <dd><?php echo $anamnesis['habitos_toxicos']; ?></dd>
-        <dt>Antecedentes Hospitalarios:</dt>
-        <dd><?php echo $anamnesis['ant_hospitalarios']; ?></dd>
-        <dt>Historial de Enfermedades:</dt>
-        <dd><?php echo $anamnesis['historial_enfermedades']; ?></dd>
-        <dt>Antecedentes Familiares:</dt>
-        <dd><?php echo $anamnesis['antecedentes_familiares']; ?></dd>
+  <dt>Antecedentes personales patológicos:</dt>
+  <dd><?php echo $anamnesis['antecedentes_patologicos']; ?></dd>
+  <dt>Antecedentes hospitalarios, traumáticos y quirúrgicos:</dt>
+  <dd><?php echo $anamnesis['antecedentes_hospitalarios']; ?></dd>
+  <dt>Antecedentes Alergicos:</dt>
+  <dd><?php echo $anamnesis['antecedentes_alergicos']; ?></dd>
+  <dt>Antecedentes Familiares:</dt>
+  <dd><?php echo $anamnesis['antecedentes_familiares']; ?></dd>
+  <dt>Antecedentes epidemiológicos:</dt>
+  <dd><?php echo $anamnesis['antecedentes_epidemiologicos']; ?></dd>
+  <dt>Sintoma Principal de la enfermedad actual:</dt>
+  <dd><?php echo $anamnesis['sintoma_principal']; ?></dd>
+  <dt>Historia de la enfermedad actual:</dt>
+  <dd><?php echo $anamnesis['historia_enfermedad']; ?></dd>
+
+
+
         <dt>Fecha:</dt>
         <dd><?php echo $anamnesis['fecha']; ?></dd>
     </dl><br/>

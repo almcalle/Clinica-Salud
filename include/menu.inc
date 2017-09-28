@@ -49,31 +49,28 @@
           <!-- AQUI COMIENZA EL MENU -->
           <ul class="sidebar-menu">
               <li class="header">PANEL DE NAVEGACION</li>
-                <!--TIEMPO EXTRA-->
+
+
+
                 <li class="treeview">
-                  <!-- <a href="#">
+                  <a href="#">
                     <i class="glyphicon glyphicon-file"></i>
                     <span>Ficha de Salud</span>
-                    <!-- <i class="glyphicon glyphicon-chevron-left pull-right"></i> -->
-                  <!-- </a>  -->
-                  <!-- <ul class="treeview-menu"> -->
-                    <li><a href="nuevaFicha.php"><i class="glyphicon glyphicon-file"></i>
-                      <span>Registrar Paciente</span>
-                    </a></li>
-                    <!-- <li><a href="consultaFicha.php"><i class="fa fa-circle-o text-orange"></i> Lista Pacientes</a></li> -->
-                  <!-- </ul> -->
+                    <i class="glyphicon glyphicon-chevron-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="nuevaFicha.php"><i class="glyphicon glyphicon-asterisk text-orange"></i> Registrar Nuevo Paciente</a></li>
+                    <li><a href="consultaFicha.php"><i class="glyphicon glyphicon-asterisk text-orange"></i> Control Ficha</a></li>
+                  </ul>
                 </li>
+
                 <!--Busqueda-->
-                <li class="treeview">
+                <!-- <li class="treeview">
                   <a href="busqueda.php">
                     <i class="glyphicon glyphicon-search"></i>
                     <span>Busqueda</span>
-                    <!-- <i class="glyphicon glyphicon-chevron-left pull-right"></i> -->
                   </a>
-                  <!-- <ul class="treeview-menu">
-                    <li><a href="consultaExamen.php"><i class="fa fa-circle-o text-orange"></i> Consultar Examen Físico</a></li>
-                  </ul> -->
-                </li>
+                </li> -->
                 <!--Examen Físico-->
                 <li class="treeview">
                   <a href="#">
@@ -82,7 +79,7 @@
                     <i class="glyphicon glyphicon-chevron-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="consultaExamen.php"><i class="fa fa-circle-o text-orange"></i> Consultar Examen Físico</a></li>
+                    <li><a href="consultaExamen.php"><i class="glyphicon glyphicon-asterisk  text-orange"></i> Consultar Examen Físico</a></li>
                   </ul>
                 </li>
                 <!--Evaluacion medica-->
@@ -93,7 +90,7 @@
                     <i class="glyphicon glyphicon-chevron-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="consultaEvaluacion.php"><i class="fa fa-circle-o text-orange"></i> Consultar Evaluación medica</a></li>
+                    <li><a href="consultaEvaluacion.php"><i class="glyphicon glyphicon-asterisk  text-orange"></i> Consultar Evaluación medica</a></li>
                   </ul>
                 </li>
                 <!--Examen Físico -->
@@ -104,7 +101,7 @@
                     <i class="glyphicon glyphicon-chevron-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="consultaAnamnesis.php"><i class="fa fa-circle-o text-orange"></i> Consultar Anamnesis</a></li>
+                    <li><a href="consultaAnamnesis.php"><i class="glyphicon glyphicon-asterisk  text-orange"></i> Consultar Anamnesis</a></li>
                   </ul>
                 </li>
                 <!--Diagnosticos-->
@@ -114,7 +111,7 @@
                     <span>Diagnostico</span>
                     <i class="glyphicon glyphicon-chevron-left pull-right"></i>
                     <ul class="treeview-menu">
-                    <li><a href="consultaDiagnostico.php"><i class="fa fa-circle-o text-orange"></i> Consultar Diagnostico</a></li>
+                    <li><a href="consultaDiagnostico.php"><i class="glyphicon glyphicon-asterisk  text-orange"></i> Consultar Diagnostico</a></li>
                     </ul>
                   </a>
                 </li>

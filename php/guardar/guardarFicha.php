@@ -18,7 +18,7 @@ $fuente = $_POST["fuente"];
 if (isset($_POST['identidad']) and isset($_POST['nombre'])) {
 
 
-		require "conexion.php";
+		require '../conexion.php';
 		$consulta = mysql_query("select identidad from ficha where identidad='".$identidad."'")or die(mysql_error());
 		$id = mysql_num_rows($consulta);
 		if ($id==0){

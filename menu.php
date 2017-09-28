@@ -36,7 +36,7 @@ Fecha sale del ultimo diagnóstico
       echo '<table id="tabla" class="display" cellspacing="0" width="100%">
       <thead>
                     <tr>
-                       <th width="100">FECHA</th>
+                       <th width="100">FECHA ULTIMO DIAGNOSTICO</th>
                        <th width="200">NOMBRE Y APELLIDOS</th>
                        <th width="200">SEXO</th>
                        <th width="200">EDAD</th>
