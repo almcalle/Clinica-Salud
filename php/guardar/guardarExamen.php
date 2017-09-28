@@ -28,7 +28,7 @@ if(isset ($_POST['identidad'])){
     '".$cabeza."','".$ojos."','".$oidos."','".$nariz."','".$boca."','".$coello."','".$columna."','".$pulmones."','".$corazon."','".$abdomen."','"
     .$genitales."','".$extremidades."','".$piel."','".$observaciones."',CURDATE())") or die(mysql_error());
         echo '<script type="text/javascript">alert("Examen Guardado");</script>';
-        echo "<script>window.location = '../detalleFicha.php?id=".$identidad."'</script>";
+        echo "<script>window.location = '../../detalleFicha.php?id=".$identidad."'</script>";
 
     mysql_close($conexion);
 }

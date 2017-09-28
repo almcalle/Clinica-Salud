@@ -60,7 +60,7 @@ include 'include/head.inc';
                         <a href="editarExamenFisico.php?idExamen='.$registro2['id'].'" class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Editar Examen Físico"></a>
 
                         &nbsp;&nbsp;&nbsp;
-                        <a href="javascript:borrarExamen('.$registro2['id'].');" class="fa fa-trash" data-toggle="tooltip" title="borrar Examen"></a></td>
+                        <a href="javascript:borrarExamen('.$registro2['id'].');" class="glyphicon glyphicon-trash" data-toggle="tooltip" title="borrar Examen"></a></td>
                    </tr>';
       }
         echo '</tbody></table>';
@@ -111,7 +111,7 @@ function detalleExamen(id){
 </script>
 <script type="text/javascript">
     function borrarExamen(id){
-		var url = 'php/borrarExamen.php';
+		var url = 'php/eliminar/borrarExamen.php';
 		var pregunta = confirm('¿Esta seguro de eliminar el Examen?');
 		if(pregunta==true){
 			$.ajax({

@@ -28,11 +28,11 @@ if (isset($_POST['identidad']) and isset($_POST['nombre'])) {
 			values('".$identidad."','".$nombre."','".$sexo."','".$direccion."','".$procedencia."','".$grado."','".$escuela."','".$fecha."',
 			'".$edad."','".$lugarNacimiento."','".$religion."','".$fuente."','".$telefono."')") or die(mysql_error());
 			echo '<script type="text/javascript">alert("Ficha Guardada");</script>';
-			echo "<script>window.location = '../detalleFicha.php?id=".$identidad."'</script>";
+			echo "<script>window.location = '../../detalleFicha.php?id=".$identidad."'</script>";
 		}
 		else {
 			echo '<script type="text/javascript">alert("El No. de identidad ya se encuentra registrado");</script>';
-			echo "<script>window.location = '../nuevaFicha.php'</script>";
+			echo "<script>window.location = '../../nuevaFicha.php'</script>";
 		}
 		mysql_close();
 }

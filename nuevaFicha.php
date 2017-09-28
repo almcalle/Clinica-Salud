@@ -26,7 +26,7 @@ include 'include/head.inc';
          	<h4></h4>
          </div>
          <div class="panel-body">
-         		 <form role="form" method="POST" action="php/guardarFicha.php"  id="nuevaFicha">
+         		 <form role="form" method="POST" action="php/guardar/guardarFicha.php"  id="nuevaFicha">
           	<!--MENU DE OPCIONES-->
           	<div class="col-lg-12">
           <div class="box box-solid">

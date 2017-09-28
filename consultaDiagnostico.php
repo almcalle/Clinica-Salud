@@ -9,29 +9,29 @@ include 'include/head.inc';
       <div class="content-wrapper">
         <section class="content-header">
         <h1>
-        Consulta de Anamnesis
+        Consulta de Diagnostico
         <small></small>
         </h1>
         <ol class="breadcrumb">
         <li><a href="menu.php"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Ficha de Anamnesis</li>
-        <li class="active">Consulta Anamnesis</li>
+        <li>Ficha de Diagnostico</li>
+        <li class="active">Consulta de Diagnostico</li>
         </ol>
         </section>
         <section class="content"><!--AQUI COMIENZA EL CONTENIDO -->
-        <div class="container">
-        <div class="col-lg-7">
-        <section id="tabla_resultado">
+        <div class=container>
+          <div class="col-lg-7">
+          <section id="tabla_resultado">
         <!-- AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA -->
         <?php
         require 'php/conexion.php';
         $id = $_POST['id'];
 
 
-        $registro = mysql_query("SELECT * FROM anamnesis ") or die(mysql_error());
+        $registro = mysql_query("SELECT DISTINCT * FROM diagnosticos ") or die(mysql_error());
 
 
-      echo '<table id="tablaAnamnesis" class="display" cellspacing="0" width="100%">
+      echo '<table id="example" class="display" cellspacing="0" width="100%">
         <thead>
                       <tr>
                       <th width="100">ID</th>
@@ -53,38 +53,37 @@ include 'include/head.inc';
                   <td>'.$ficha['nombre'].'</td>
                   <td>'.$ficha['grado'].'-'.$ficha[seccion].'</td>
                    <td>'.$registro2['fecha'].'</td>
-                        <td><a href="javascript:detalleAnamnesis('.$registro2['id'].');" class="glyphicon glyphicon-search" data-toggle="tooltip" title="Ver Detalle"></a>&nbsp;&nbsp;&nbsp;<a href="javascript:borrarAnamnesis('.$registro2['id'].');" class="glyphicon glyphicon-trash" data-toggle="tooltip" title="borrar Evaluación"></a></td>
+                        <td><a href="javascript:detalleDiagnostico('.$registro2['id'].');" class="glyphicon glyphicon-search" data-toggle="tooltip" title="Ver Detalle"></a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="javascript:borrarDiagnostico('.$registro2['id'].');"
+                         class="glyphicon glyphicon-trash" data-toggle="tooltip" title="borrar Evaluación"></a></td>
                    </tr>';
       }
         echo '</tbody></table>';
 
         ?>
         </section>
-           <!--//////////////////////////////////AQUI SE MUESTRA LA INFORMACION/////////////////////////-->
-            <br/>
-          </div>
-          <div class="col-lg-5"><!--AQUI SE MUESTRA LA INFORMACION-->
-            <div class="registros" id="agrega-registros"></div>
+            </div>
+             <div class="col-lg-5">
             <center><ul class="pagination" id="pagination"></ul></center>
-          <div class="registros" id="agrega-registros"></div>
-          <center><ul class="pagination" id="pagination"></ul></center>
-           </div>
-          </div>
-         </section><!-- right col -->
+                <div class="registros" id="agrega-registros"></div>
+            </div>
 
-        </div>
-      <?php
+           </div>
+         </section><!-- right col -->
+    </div><!-- ./wrapper -->
+       <?php
       include 'include/footer.inc';
       ?>
-      </div><!-- ./wrapper -->
+     </div>
 
 <?php
 include 'include/scripts.inc';
 ?>
 <script src = "js/jquery.dataTables.js" type="text/javascript"></script>
 <script type="text/javascript">
-function detalleAnamnesis(id){
-    var url = 'php/detalle/detalleAnamnesis.php';
+function detalleDiagnostico(id){
+    var url = 'php/detalle/detalleDiagnostico.php';
     if(!id){
         }
         else{
@@ -94,7 +93,6 @@ function detalleAnamnesis(id){
         data:'id='+id,
         success: function(registros){
             $('#agrega-registros').html(registros);
-            $('#pagination').html("");
             return false;
         }
         });
@@ -102,9 +100,9 @@ function detalleAnamnesis(id){
     }
 </script>
 <script type="text/javascript">
-    function borrarAnamnesis(id){
-		var url = 'php/eliminar/borrarAnamnesis.php';
-		var pregunta = confirm('¿Esta seguro de eliminar el Anamnesis?');
+    function borrarDiagnostico(id){
+		var url = 'php/eliminar/borrarDiagnostico.php';
+		var pregunta = confirm('¿Esta seguro de eliminar el Diagnostico?');
 		if(pregunta==true){
 			$.ajax({
 			type:'POST',
@@ -121,7 +119,7 @@ function detalleAnamnesis(id){
 </script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#tablaAnamnesis').DataTable();
+    $('#example').DataTable();
 } );
 </script>
 <?php

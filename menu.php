@@ -30,7 +30,9 @@ Fecha sale del ultimo diagnóstico
 
 
 
-      $registro = mysql_query("SELECT DISTINCT * FROM ficha ") or die(mysql_error());
+      $registro = mysql_query("SELECT * FROM diagnosticos INNER JOIN ficha
+        ON diagnosticos.identidad = ficha.identidad ORDER by diagnosticos.fecha DESC")
+         or die(mysql_error());
 
 
       echo '<table id="tabla" class="display" cellspacing="0" width="100%">
@@ -58,12 +60,12 @@ Fecha sale del ultimo diagnóstico
                 <td>'.$registro2['edad'].'</td>
                 <td>'.$registro2['grado'].'</td>
                 <td>'.$registro2['direccion'].'</td>
-                <td>'.$registro2['diagnostico'].'</td>
+                <td>'.$registro2['patologico'].'</td>
 
 
                       <td><a href="detalleFicha.php?id='.$registro2['identidad'].'" class="glyphicon glyphicon-search" data-toggle="tooltip" title="Ver Detalle"></a>
-                      &nbsp;&nbsp;&nbsp;<a href="editarFicha.php?id='.$registro2['identidad'].'" class="fa fa-edit" data-toggle="tooltip" title="Editar Ficha"></a>
-                      &nbsp;&nbsp;&nbsp;<a href="javascript:borrarFicha('.$registro2['identidad'].');" class="fa fa-trash" data-toggle="tooltip" title="Borrar Ficha"></a>
+                      &nbsp;&nbsp;&nbsp;<a href="editarFicha.php?id='.$registro2['identidad'].'" class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Editar Ficha"></a>
+                      &nbsp;&nbsp;&nbsp;<a href="javascript:borrarFicha('.$registro2['identidad'].');" class="glyphicon glyphicon-erase" data-toggle="tooltip" title="Borrar Ficha"></a>
                         </td>
       </tr>';
       }

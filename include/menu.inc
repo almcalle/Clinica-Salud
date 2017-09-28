@@ -82,17 +82,7 @@
                     <li><a href="consultaExamen.php"><i class="glyphicon glyphicon-asterisk  text-orange"></i> Consultar Examen Físico</a></li>
                   </ul>
                 </li>
-                <!--Evaluacion medica-->
-                <li class="treeview">
-                  <a href="#">
-                    <i class="glyphicon glyphicon-heart"></i>
-                    <span>Evaluación medica</span>
-                    <i class="glyphicon glyphicon-chevron-left pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="consultaEvaluacion.php"><i class="glyphicon glyphicon-asterisk  text-orange"></i> Consultar Evaluación medica</a></li>
-                  </ul>
-                </li>
+
                 <!--Examen Físico -->
                <li class="treeview">
                   <a href="#">
@@ -107,7 +97,7 @@
                 <!--Diagnosticos-->
                 <li class="treeview">
                   <a href="#">
-                    <i class="glyphicon glyphicon-folder-open"></i>
+                    <i class="glyphicon glyphicon-heart"></i>
                     <span>Diagnostico</span>
                     <i class="glyphicon glyphicon-chevron-left pull-right"></i>
                     <ul class="treeview-menu">

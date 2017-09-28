@@ -19,7 +19,7 @@ $historia_enfermedad = $_POST["historia_enfermedad"];
     values('".$identidad."','".$antecedentes_patologicos."','".$antecedentes_hospitalarios."','".$antecedentes_alergicos
     ."','".$antecedentes_familiares."','".$antecedentes_epidemiologicos."','".$sintoma_principal."','".$historia_enfermedad."',CURDATE())") or die(mysql_error());
         echo '<script type="text/javascript">alert("Anamnesis Guardado");</script>';
-        echo "<script>window.location = '../detalleFicha.php?id=".$identidad."'</script>";
+        echo "<script>window.location = '../../detalleFicha.php?id=".$identidad."'</script>";
 
     mysql_close($conexion);
 }

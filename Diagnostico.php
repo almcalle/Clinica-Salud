@@ -1,10 +1,10 @@
 <?php
 require 'php/requerirUsuario.php';
-include 'inc/inicio.inc';
+include 'include/head.inc';
 ?>
       <div class="wrapper">
       <?php
-      include 'inc/menu.inc';
+      include 'include/menu.inc';
       ?>
       <div class="content-wrapper">
         <section class="content-header">
@@ -102,12 +102,12 @@ $registro = mysql_query("select * from ficha where identidad='".$buscar."'");
         </section><!-- right col -->
       </div>
       <?php
-      include 'inc/footer.inc';
+      include 'include/footer.inc';
       ?>
       </div><!-- ./wrapper -->
 
 <?php
-include 'inc/scripts.inc';
+include 'include/scripts.inc';
 ?>
 <script type="text/javascript">
   function limpiar() {
@@ -115,6 +115,6 @@ include 'inc/scripts.inc';
   }
 </script>
 <?php
-include 'inc/plugins.inc';
-include 'inc/fin.inc';
+include 'include/plugins.inc';
+include 'include/fin.inc';
 ?>

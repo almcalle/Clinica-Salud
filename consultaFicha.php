@@ -50,8 +50,8 @@ include 'include/head.inc';
                   <td>'.$registro2['grado'].'-'.$registro2[seccion].'</td>
 
                         <td><a href="detalleFicha.php?id='.$registro2['identidad'].'" class="glyphicon glyphicon-search" data-toggle="tooltip" title="Ver Detalle"></a>
-                        &nbsp;&nbsp;&nbsp;<a href="editarFicha.php?id='.$registro2['identidad'].'" class="fa fa-edit" data-toggle="tooltip" title="Editar Ficha"></a>
-                        &nbsp;&nbsp;&nbsp;<a href="javascript:borrarFicha('.$registro2['identidad'].');" class="fa fa-trash" data-toggle="tooltip" title="Borrar Ficha"></a>
+                        &nbsp;&nbsp;&nbsp;<a href="editarFicha.php?id='.$registro2['identidad'].'" class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Editar Ficha"></a>
+                        &nbsp;&nbsp;&nbsp;<a href="javascript:borrarFicha('.$registro2['identidad'].');" class="glyphicon glyphicon-trash" data-toggle="tooltip" title="Borrar Ficha"></a>
                         	</td>
 				</tr>';
       }
@@ -78,7 +78,7 @@ include 'include/scripts.inc';
 
 <script type="text/javascript">
     function borrarFicha(id){
-		var url = 'php/borrarFicha.php';
+		var url = 'php/eliminar/borrarFicha.php';
 		var pregunta = confirm('¿Esta seguro de eliminar esta Ficha?');
 		if(pregunta==true){
 			$.ajax({

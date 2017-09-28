@@ -41,7 +41,7 @@ if ($reg==0) {
 <div class="col-lg-12">
 <div class="box box-warning">
 <div class="box-header with-border">
-  <h3 class="box-title"><i class="fa fa-folder-open"></i>Ficha de Salud Escolar</h3>
+  <h3 class="box-title"><i class="fa fa-folder-open"></i>Ficha de Salud</h3>
 </div>
 <div class="box-body">
 	<!-- <center><img src="<?php echo "img/".$Ficha['foto']; ?>" alt="<?php echo "img/".$registro['foto']; ?>" id="fotoGrande" /></center> -->
@@ -51,17 +51,16 @@ if ($reg==0) {
         <dd><?php echo $identidad; ?></dd>
         <dt>Nombre:</dt>
         <dd><?php echo $Ficha['nombre']; ?></dd>
-        <dt>Dirección:</dt>
-        <dd><?php echo $Ficha['direccion']; ?></dd>
         <dt>Edad:</dt>
         <dd><?php echo $Ficha['edad']." A&ntilde;os"; ?></dd>
         <dt>Sexo:</dt>
         <dd><?php echo $Ficha['sexo']; ?></dd>
+        <dt>Dirección:</dt>
+        <dd><?php echo $Ficha['direccion']; ?></dd>
         <dt>Fecha de Nacimiento:</dt>
         <dd><?php echo $Ficha['fecha_nacimiento']; ?></dd>
         <dt>Lugar de Nacimiento:</dt>
         <dd><?php echo $Ficha['lugar_nacimiento']; ?></dd>
-
         <dt>Procedencia:</dt>
         <dd><?php echo $Ficha['procedencia']; ?></dd>
         <dt>Escuela:</dt>
@@ -79,7 +78,7 @@ if ($reg==0) {
         <dd>* Datos al momento del registro</dd>
     </dl><br/>
     <a class="btn btn-app" href="javascript:borrarFicha(<?php echo $identidad; ?>);">
-    	<i class="glyphicon glyphicon-erase"></i> Borrar Ficha
+    	<i class="glyphicon glyphicon-trash"></i> Borrar Ficha
     </a>
 
     <a class="btn btn-app" href="editarFicha.php?id=<?php echo $identidad; ?>">
@@ -92,9 +91,9 @@ if ($reg==0) {
     <a class="btn btn-app" href="ExamenFisico.php?id=<?php echo $identidad; ?>">
     	<i class="glyphicon glyphicon-plus"></i>  Examen Físico
     </a>
-    <a class="btn btn-app" href="Evaluacion.php?id=<?php echo $identidad; ?>">
+    <!-- <a class="btn btn-app" href="Evaluacion.php?id=<?php echo $identidad; ?>">
       <i class="glyphicon glyphicon-plus"></i>  Evaluación Médica
-    </a>
+    </a> -->
     <a class="btn btn-app" href="Diagnostico.php?id=<?php echo $identidad; ?>">
       <i class="glyphicon glyphicon-plus"></i>  Diagnostico
     </a>
@@ -163,7 +162,7 @@ if ($reg==0) {
         <dd><?php echo $examen['observaciones']; ?></dd>
         <dt>Fecha:</dt>
         <dd><?php echo $examen['fecha']; ?></dd>
-    </dl><br/>
+    </dl>
     <!-- <a class="btn btn-app" href="editarExamenFisico.php?idExamen=<?php echo $examen['id']; ?>">
       <i class="fa fa-edit"></i> Editar Examen Físico
     </a> -->
@@ -172,51 +171,7 @@ if ($reg==0) {
 </div>
     <!-- </div> -->
 <!--Aqui finaliza el detalle del examen fisico-->
-<!--Aqui comienza el detalle de la evaluacion medica-->
-<?php
-$sql = mysql_query("select * from evaluaciones where identidad='".$identidad."' ORDER BY `fecha` DESC");
-$evaluacion = mysql_fetch_array($sql); ?>
-<!-- <div class="container"> -->
-<div class="col-lg-12">
-<div class="panel panel-warning">
-<div class="panel-heading"><h3><i class="fa fa-folder-open"></i>Ficha de Evaluación Medica</h3>
-<!-- /.box-tools -->
-</div>
 
-<!-- /.box-header -->
-
-<div class="panel-body">
-<dl>
-    <dt>Estrabismo:</dt>
-    <dd><?php echo $evaluacion['estrabismo']; ?></dd>
-    <dt>Pérdida Auditiva:</dt>
-    <dd><?php echo $evaluacion['perdida_auditiva']; ?></dd>
-    <dt>Trastornos de Formación:</dt>
-    <dd><?php echo $evaluacion['transtorno_fonacion']; ?></dd>
-    <dt>Pediculosis:</dt>
-    <dd><?php echo $evaluacion['pediculosis']; ?></dd>
-    <dt>Escabiosis o Sarna:</dt>
-    <dd><?php echo $evaluacion['sarna']; ?></dd>
-    <dt>Sospecha de Anemia:</dt>
-    <dd><?php echo $evaluacion['anemia']; ?></dd>
-    <dt>Sospecha de Violencia:</dt>
-    <dd><?php echo $evaluacion['violencia']; ?></dd>
-    <dt>Problemas de Personalidad:</dt>
-    <dd><?php echo $evaluacion['problemas_personalidad']; ?></dd>
-    <dt>Problemas de Aprendizaje:</dt>
-    <dd><?php echo $evaluacion['problemas_aprendizaje']; ?></dd>
-    <dt>Uso de Drogas:</dt>
-    <dd><?php echo $evaluacion['uso_drogas']; ?></dd>
-
-    <dt>Fecha:</dt>
-    <dd><?php echo $evaluacion['fecha']; ?></dd>
-</dl>
-</div>
-<div class="box-footer"></div>
-</div>
-</div>
-<!-- </div> -->
-<!--Aqui finaliza el detalle del evaluacion medica-->
 
 <!--Aqui comienza el detalle del Anamnesis-->
 
@@ -313,7 +268,7 @@ mysql_close($conexion);
       <script type="text/javascript">
           function borrarFicha(id){
             debugger;
-      		var url = 'php/borrarFicha.php';
+      		var url = 'php/eliminar/borrarFicha.php';
       		var pregunta = confirm('¿Esta seguro de eliminar el Examen?');
       		if(pregunta==true){
       			$.ajax({
