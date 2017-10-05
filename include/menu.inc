@@ -46,9 +46,7 @@
           <!-- AQUI COMIENZA EL MENU -->
           <ul class="sidebar-menu">
               <li class="header">PANEL DE NAVEGACION</li>
-
-
-
+              
                 <li class="treeview">
                   <a href="#">
                     <i class="glyphicon glyphicon-file"></i>
@@ -62,12 +60,12 @@
                 </li>
 
                 <!--Busqueda-->
-                <!-- <li class="treeview">
+                <li class="treeview">
                   <a href="busqueda.php">
                     <i class="glyphicon glyphicon-search"></i>
                     <span>Busqueda</span>
                   </a>
-                </li> -->
+                </li>
                 <!--Examen Físico-->
                 <li class="treeview">
                   <a href="#">
