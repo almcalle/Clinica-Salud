@@ -46,7 +46,7 @@
           <!-- AQUI COMIENZA EL MENU -->
           <ul class="sidebar-menu">
               <li class="header">PANEL DE NAVEGACION</li>
-              
+
                 <li class="treeview">
                   <a href="#">
                     <i class="glyphicon glyphicon-file"></i>
@@ -86,7 +86,22 @@
                     <i class="glyphicon glyphicon-chevron-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="consultaAnamnesis.php"><i class="glyphicon glyphicon-asterisk  text-orange"></i> Consultar Anamnesis</a></li>
+                    <li><a href="consultaAnamnesis.php"><i class="glyphicon
+                      glyphicon-asterisk  text-orange"></i> Consultar Anamnesis</a></li>
+                  </ul>
+                </li>
+
+                <!--Examen de Laboratorio-->
+                <li class="treeview">
+                  <a href="#">
+                    <i class="glyphicon glyphicon-level-up"></i>
+                    <span>Examen de Laboratorio</span>
+                    <i class="glyphicon glyphicon-chevron-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="consultaExamenLaboratorio.php">
+                      <i class="glyphicon glyphicon-asterisk  text-orange"></i>
+                      Consultar Examen</a></li>
                   </ul>
                 </li>
                 <!--Diagnosticos-->

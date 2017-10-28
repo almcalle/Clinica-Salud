@@ -88,6 +88,10 @@ if ($reg==0) {
       <i class="glyphicon glyphicon-plus"></i>  Anamnesis
     </a>
 
+    <a class="btn btn-app" href="nuevoExamenLaboratorio.php?id=<?php echo $identidad; ?>">
+    	<i class="glyphicon glyphicon-plus"></i>  Examen de Laboratorio
+    </a>
+
     <a class="btn btn-app" href="nuevoExamenFisico.php?id=<?php echo $identidad; ?>">
     	<i class="glyphicon glyphicon-plus"></i>  Examen Físico
     </a>
@@ -215,6 +219,43 @@ if ($reg==0) {
 </div>
     <!-- </div> -->
 <!--Aqui finaliza el detalle del Anamnesis-->
+
+<!--Aqui comienza el detalle del tratamiento-->
+<?php
+$examenesLaboratorio = mysql_query("select * from examen_laboratorio where
+identidad='".$identidad."' ORDER BY `fecha` DESC");
+// $tratamientos = mysql_fetch_array($sql); ?>
+<!-- <div class="container"> -->
+<div class="col-lg-12">
+<div class="panel panel-warning">
+<div class="panel-heading"><h3><i class="fa fa-folder-open">
+</i>Ficha de exámenes de laboratorio</h3>
+<!-- /.box-tools -->
+</div>
+
+<!-- /.box-header -->
+
+<div class="panel-body">
+<dl>
+<?php
+while($examen = mysql_fetch_array($examenesLaboratorio)){
+  ?>
+  <dt>Fecha:</dt>
+  <dd><?php echo $examen['fecha']; ?></dd>
+    <dt>Examen de laboratorio:</dt>
+    <dd><?php echo $examen['examen_laboratorio']; ?></dd>
+    <?php
+  }
+      ?>
+</dl>
+</div>
+
+</div>
+</div>
+<!-- </div> -->
+<!--Aqui finaliza el detalle del Examen de laboratorio-->
+
+
     <!--Aqui comienza el detalle del diagnostico-->
     <?php
     $sql = mysql_query("select * from diagnosticos where identidad='".$identidad."' ORDER BY `fecha` DESC");
@@ -305,7 +346,7 @@ mysql_close($conexion);
           function borrarFicha(id){
             debugger;
       		var url = 'php/eliminar/borrarFicha.php';
-      		var pregunta = confirm('¿Esta seguro de eliminar el Examen?');
+      		var pregunta = confirm('¿Esta seguro de eliminar la ficha?');
       		if(pregunta==true){
       			$.ajax({
       			type:'POST',

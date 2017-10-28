@@ -25,9 +25,9 @@ include 'include/menu.inc';
             $registro = mysql_query("select * from ficha where identidad='".$buscar."'");
             $Ficha = mysql_fetch_array($registro);
             ?>
-          <div class="col-lg-12">
         <section class="content"><!--AQUI COMIENZA EL CONTENIDO -->
         <div class="row">
+          <div class="col-lg-12">
 
             <div class="box box-warning widget-user-2">
 
@@ -124,7 +124,7 @@ include 'include/menu.inc';
 
         <div>
           <label>Historia de la enfermedad actual</label>
-          <input class="form-control" type="text" name="historia_enfermedad" maxlength="199" required="required" onBlur="javascript:this.value=this.value.toUpperCase();"/>
+          <input class="form-control" type="text" name="historia_enfermedad" maxlength="499" required="required" onBlur="javascript:this.value=this.value.toUpperCase();"/>
         </div>
 
       </div>
@@ -142,11 +142,11 @@ include 'include/menu.inc';
         </div>
         </section><!-- Aqui es el fin -->
         </div>
-      </div>
-    </div><!-- ./wrapper -->
+
       <?php
       include 'include/footer.inc';
       ?>
+    </div><!-- ./wrapper -->
 
 <?php
 include 'include/scripts.inc';

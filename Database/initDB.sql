@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-10-2017 a las 16:27:19
+-- Tiempo de generación: 26-10-2017 a las 21:25:03
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 5.6.30
 
@@ -37,17 +37,10 @@ CREATE TABLE `anamnesis` (
   `antecedentes_familiares` varchar(200) NOT NULL,
   `antecedentes_epidemiologicos` varchar(200) NOT NULL,
   `sintoma_principal` varchar(200) NOT NULL,
-  `historia_enfermedad` varchar(200) NOT NULL,
+  `historia_enfermedad` varchar(500) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `anamnesis`
---
-
-
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `citas`
@@ -60,13 +53,6 @@ CREATE TABLE `citas` (
   `identidad` varchar(200) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `citas`
---
-
-
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `diagnosticos`
@@ -83,13 +69,6 @@ CREATE TABLE `diagnosticos` (
   `fecha` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
---
--- Volcado de datos para la tabla `diagnosticos`
---
-
-
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `examen`
@@ -122,7 +101,18 @@ CREATE TABLE `examen` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
--- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `examen_laboratorio`
+--
+
+CREATE TABLE `examen_laboratorio` (
+  `id` bigint(20) NOT NULL,
+  `identidad` varchar(14) NOT NULL,
+  `examen_laboratorio` varchar(200) NOT NULL,
+  `fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 
 --
 -- Estructura de tabla para la tabla `ficha`
@@ -145,8 +135,6 @@ CREATE TABLE `ficha` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
--- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `tratamiento`
 --
@@ -158,13 +146,7 @@ CREATE TABLE `tratamiento` (
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `tratamiento`
---
 
-
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `usuarios`
@@ -212,6 +194,12 @@ ALTER TABLE `examen`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `examen_laboratorio`
+--
+ALTER TABLE `examen_laboratorio`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `tratamiento`
 --
 ALTER TABLE `tratamiento`
@@ -231,27 +219,32 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `anamnesis`
 --
 ALTER TABLE `anamnesis`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=218;
 --
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `diagnosticos`
 --
 ALTER TABLE `diagnosticos`
-  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT de la tabla `examen`
 --
 ALTER TABLE `examen`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT de la tabla `examen_laboratorio`
+--
+ALTER TABLE `examen_laboratorio`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `tratamiento`
 --
 ALTER TABLE `tratamiento`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;COMMIT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
